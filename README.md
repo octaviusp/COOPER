@@ -1,3 +1,5 @@
+![Torvald banner](https://github.com/octaviusp/Torvald/blob/main/torvald.png)
+
 # Torvald
 Torvald is an intelligent os assistant that you could use like talking to your best friend.
 
