@@ -14,31 +14,38 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
                 response = openai.ChatCompletion.create(
                                 model='gpt-3.5-turbo',
                                 max_tokens=2048,
-                                temperature=0.2,
+                                temperature=0,
                                 messages=[{"role":"system", "content": setRolePrompt()},
                                 {"role":"user", "content":f"""
-                                %
-                                [{platform.system()}]
-                                [admin]
-                                [{action_prompt}]%
+                                %$[{platform.system()}]\n
+                                [{action_prompt}]%$
                                 """ }]
                                 ,
                                 n=1
                 )
 
-                print(response)
                 get_message = response.choices[0].message.content
+                notesFromResponse = ""
+                codeFromResponse = ""
 
-                codeFromResponse = re.search(r"%%%(.+?)%%%", get_message)
-                notesFromResponse = re.search(r"&&&(.+?)&&&", get_message)
-
-                print(codeFromResponse.group(1))
-                if not codeFromResponse:
-                       errors.invalidRequest()
-                
-                extract_code = codeFromResponse.group(1)
-
-                executeScript.main(extract_code)
+                try:
+                        codeFromResponse = get_message.split('%%%')[1]
+                        try:
+                                codeFromResponse = codeFromResponse.split('&&&')[0]
+                        except:
+                                pass
+                except:
+                        errors.invalidRequest()
+                try:
+                        notesFromResponse = get_message.split('&&&')[1]
+                except:
+                        pass
+                print("********************************************")
+                print(codeFromResponse)
+                print("********************************************")
+                executeScript.main(codeFromResponse)
+                print("********************************************")
+                print(notesFromResponse)
                 
         except Exception as error:
                 print(error)
