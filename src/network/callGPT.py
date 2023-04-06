@@ -16,14 +16,11 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
                                 max_tokens=2048,
                                 temperature=0,
                                 messages=[{"role":"system", "content": setRolePrompt()},
-                                {"role":"user", "content":f"""
-                                %$[{platform.system()}]\n
-                                [{action_prompt}]%$
-                                """ }]
+                                {"role":"user", "content":f"[{action_prompt}]"}]
                                 ,
                                 n=1
                 )
-
+                print(response)
                 get_message = response.choices[0].message.content
                 notesFromResponse = ""
                 codeFromResponse = ""
