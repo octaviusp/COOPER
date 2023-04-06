@@ -2,14 +2,19 @@ import sys
 
 from helpers import utils
 from network import callGPT
+from configparser import ConfigParser
 
 def main():
 
     DATA = {}
     
-    #if not DATA:
-    #    print(f"\n {utils.APP_NAME} try to provide all required data, type --help to more info. \n")
-    # Getting the prompt text to generate bash code 
+    cg = ConfigParser()
+    cg.read("./settings/settings.ini")
+    
+    DATA['MODEL'] = cg.get('CONFIG', 'MODEL')
+    DATA['TEMPERATURE'] = cg.getint('CONFIG', 'TEMPERATURE')
+    DATA['MAX_TOKENS'] = cg.getint('CONFIG', 'MAX_TOKENS')
+    DATA['RESPONSES'] = cg.getint('CONFIG', 'RESPONSES')
 
     prompt = " ".join(sys.argv[1:])
     if prompt:

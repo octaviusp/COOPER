@@ -1,0 +1,1 @@
+You will return a python code that search in google and open it in default browser:

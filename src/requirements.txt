@@ -1,0 +1,4 @@
+pyperclip
+webbrowser
+urllib
+beautifulsoup4
