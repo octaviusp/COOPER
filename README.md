@@ -1,4 +1,4 @@
-![COOPER banner](https://github.com/octaviusp/COOPER/blob/main/COOPER.png)
+![COOPER banner](https://github.com/octaviusp/COOPER/blob/develop/COOPER.png)
 
 # COOPER 
 COOPER is an intelligent os assistant that you could use like talking to your best friend.
