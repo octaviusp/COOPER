@@ -1,7 +1,8 @@
 from gtts import gTTS
 import os
 
-def main(text):
+def main(text, file_name):
     audio = gTTS(text=text, slow=False)
-    audio.save("NOT_POSSIBLE_ACTION.mp3")
-    os.system("open NOT_POSSIBLE_ACTION.mp3")
+    audio.speed = 1.1
+    audio.save(f"{file_name}.mp3")
+    os.system(f"open {file_name}.mp3")

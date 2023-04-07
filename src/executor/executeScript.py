@@ -3,9 +3,10 @@ import sys
 import re
 import hashlib
 import platform
+from .voiceAnswer import main as vc
 
-APP_NAME = "A"
-def main(python_code: str):
+APP_NAME = "COOPER - "
+def main(python_code: str, notes: str):
     try:
         print("{APP_NAME} - Executing action sir...")
         m = hashlib.md5()
@@ -24,7 +25,8 @@ def main(python_code: str):
                 prefix = "python"
 
         subprocess.run([prefix, temporaly_filename])
-
+        if notes:
+                vc(notes, "NOTES")
         remove_file(temporaly_filename)
 
         print("\n")

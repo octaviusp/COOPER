@@ -1,8 +1,6 @@
 import openai
-import re
 from executor import executeScript, voiceAnswer
 from helpers import errors
-#from responseTOPIC import promptTopicToGPT
 
 def promptDataToGPT(action_prompt: str, context: dict[str, str]):
         
@@ -12,20 +10,34 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
         is_code = False
 
         promptGuide = promptTopicToGPT(action_prompt, context)
-        print(promptGuide)
-        if promptGuide.find("python") != -1:
-                is_code = True
-                promptGuide += "\n" + getPrompts("python_structure/python_code")
+
+        try:
+                if promptGuide.find("python") != -1:
+                        is_code = True
+                        promptGuide = promptGuide + "\n" + getPrompts("python_structure/python_code")
+                else:
+                        promptGuide = "You are a linux assistant\n" + promptGuide
+        except:
+                voiceAnswer.main("Please give me more context.", "ERROR_OCURRED")
+                return
+
+        promptGuide = getPrompts("python_structure/required") + "\n" + promptGuide
+        
         print(promptGuide)
         try:
                 message = openAICall(promptGuide, action_prompt, context)
-                print("\n",message, "\n")
+                print(message)
+                global notes
+                notes = ""
+                try:
+                        notes = message.split("&&&")[1]
+                except:
+                        pass
                 if is_code:
                         code = message.split("%%%")[1]
-                        print("\n code:\n",code)
-                        executeScript.main(code)
+                        executeScript.main(code, notes)
                 else:   
-                        voiceAnswer.main(message.replace("$$$", ""))
+                        voiceAnswer.main(message.replace("$$$", ""), "GENERAL_TOPIC")
                 return
         
         except Exception as error:
@@ -33,22 +45,9 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
 
 def promptTopicToGPT(user_action, config):
 
-    NUMBER_RESPONSES = 1 if len(user_action) < 150 else 2
-
     try:
-
-        response = openai.ChatCompletion.create(
-                    model=config['MODEL'],
-                    max_tokens=config['MAX_TOKENS'],
-                    temperature=config['TEMPERATURE'],
-                    messages=[{"role":"system", "content": getPrompts("topic_selector")},
-                    {"role":"user", "content":f"[{user_action}]"}]
-                    ,
-                    n=NUMBER_RESPONSES
-                )
-
-        get_response = response.choices[0].message.content
-
+        get_response = openAICall(getPrompts("topic_selector"), user_action, config)
+        print(get_response)
         return getPrompts(f"topic_prompts/{get_response}")
 
     except Exception as e:

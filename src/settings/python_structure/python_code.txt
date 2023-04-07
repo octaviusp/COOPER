@@ -1,8 +1,18 @@
-THE PYTHON CODE MUST BE SHORT, BRIEFLY, SIMPLE, AND VALID.
-ONLY RETURN CODE.
-IMPORT ALL REQUIRED LIBRARIES.
-If folder path is required use ABSOLUTE PATH with os.expanduser()
-add a try catch block for each code line prone to errors and use gtts library to
-reproduce and audio saying "Isn't possible the actions, view log for more information"
-return python code inside "%%%", example: "%%% print("hello world") %%%".
-neither don't add any extra text nor notes.
+THE PYTHON CODE MUST BE SHORT AND SIMPLE AND DON'T CONTAIN ANY USER INTERACTION.
+THE PYTHON CODE MUST BE ENTIRE IN ONE CODE BLOCK.
+IN THE BEGIN OF PYTHON CODE PUT "%%%".
+IN THE END OF PYTHON CODE PUT AGAIN "%%%".
+PYTHON CODE MUST BE INSIDE "%%%", examples: 
+"%%%
+import os
+print(os.sistem())%%%".
+IMPORT REQUIRED LIBRARIES.
+If folder path is required use ABSOLUTE PATH with os.expanduser().
+add a try except block for each code line prone to errors and IN EXCEPT print: "$INVALID_OPERATION$".
+after the "%%%" of the end of python code add a note inside "&&&" with a resume of 3 words what is doing.
+Example of above requirements: 
+"
+%%%print("hello")%%%
+&&&searching car in internet&&&"
+".
+USER REQUEST:

@@ -1,0 +1,7 @@
+You will return a text inside "$$$" chatting to user.
+example: 
+question: "how're you"
+answer: "$$$im fine, you$$$"
+question: "tell me and advice"
+answer: "$$$invest in you$$$"
+USER REQUEST:

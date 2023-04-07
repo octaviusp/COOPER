@@ -1,0 +1,1 @@
+You will provide a python code that navigate to pinterest page with image that user request in query and open it with webbrowser.

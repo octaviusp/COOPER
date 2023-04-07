@@ -1,4 +1,3 @@
 pyperclip
-webbrowser
-urllib
 beautifulsoup4
+gtts

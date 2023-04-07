@@ -1,13 +1,13 @@
-![Torvald banner](https://github.com/octaviusp/Torvald/blob/main/torvald.png)
+![COOPER banner](https://github.com/octaviusp/Torvald/blob/main/torvald.png)
 
-# Torvald
-Torvald is an intelligent os assistant that you could use like talking to your best friend.
+# COOPER
+COOPER is an intelligent os assistant that you could use like talking to your best friend.
 
-The idea behind Torvald is to talk with him within audio.
+The idea behind COOPER is to talk with him within audio (advanced versions).
 Like an Google assistant but more powerful and operating system actions.
-In the behind, Torvald will produce a script code in python to translate your voice into operating system actions.
+In the behind, COOPER will produce a script code in python to translate your voice into operating system or another actions.
 
 - Examples:
 
-```User: Torvald, change my wallpaper to a random galaxy image from internet.```
-Torvald will generate this script in python and execute it.
+```User: cooper change my wallpaper to a random galaxy image.```
+Cooper will generate this script in python and execute it.
