@@ -1,4 +1,4 @@
-![COOPER banner](https://github.com/octaviusp/Torvald/blob/main/torvald.png)
+![COOPER banner](https://github.com/octaviusp/Cooper/blob/main/COOPER.png)
 
 # COOPER
 COOPER is an intelligent os assistant that you could use like talking to your best friend.

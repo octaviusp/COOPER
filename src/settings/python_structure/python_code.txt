@@ -14,5 +14,23 @@ Example of above requirements:
 "
 %%%print("hello")%%%
 &&&searching car in internet&&&"
+"
+"
+%%%
+import os
+#python code...
+# finish python code
+return%%%
+&&&executing a function&&&"
+"
+"
+%%%import request
+def api():
+    #request api data  
+    return data
+api()
+# finish of the python script
+%%%
+&&&calling api&&&"
 ".
 USER REQUEST:
