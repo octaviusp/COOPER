@@ -6,13 +6,11 @@
 
 Is an easy way to do any tasks in your OS from terminal without knowing or memorize command-line syntax, using natural language as input text. With COOPER, you can seamlessly perform tasks such as launching applications, changing system settings, run updates, or just almost anything you want.
 
-Powered by OpenAI's technollogy, which allows to translate your text or speech requests into code instructions that OS can understand, and Python power, which allows to script and perform that instructions for almost any type of task easily and effectively.
+Powered by OpenAI's technollogy, which allows to translate your text or speech requests into code instructions that OS can understand, and Python power, which allows to script and execute that instructions for almost any type of task easily and effectively.
 
 "Whether you're an advanced user or a casual user, COOPER provides an easier way to interact with your computer.
 
 
 - Examples:
 
-```> cooper change my wallpaper to a random galaxy image```
-
-Cooper will generate this script in python and execute it.
+      User: cooper change my wallpaper to a random galaxy one
