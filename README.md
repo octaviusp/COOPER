@@ -6,7 +6,7 @@
 
 Is an easy way to do any tasks in your OS from terminal without knowing or memorize command-line syntax, only using natural language as input.
 
-Powered by OpenAI's technology, which allows to translate your text or speech requests into code instructions, and with the Python power, which allows to script and execute that instructions for almost any type of task easily and effectively.
+Powered by OpenAI's technology, which allows to translate your text or *speech*<sup>(soon)</sup> requests into code instructions, and with the Python power, which allows to script and execute that instructions for almost any type of task easily and effectively.
 
 Whether you are an advanced user or a casual user, COOPER provides an easier way to interact with your computer.
 
