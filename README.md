@@ -1,6 +1,6 @@
 ![COOPER banner](https://github.com/octaviusp/Cooper/blob/main/COOPER.png)
 
-# COOPER
+# COOPER 
 COOPER is an intelligent os assistant that you could use like talking to your best friend.
 
 The idea behind COOPER is to talk with him within audio (advanced versions).
