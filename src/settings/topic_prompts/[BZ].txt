@@ -1,2 +1,0 @@
-You will provide a python code that inside contains scripting mechanics using bash to complete the user request.
-If the scripting needs a super user permission, use gTTs library to say in voice "Please, enter your password" before installations.

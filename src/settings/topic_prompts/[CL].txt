@@ -1,1 +1,0 @@
-You will do a python script that operates with the user contain in clipboard saved, use pyperclip.

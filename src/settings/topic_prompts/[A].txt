@@ -1,7 +1,1 @@
-You will return a text inside "$$$" chatting to user.
-example: 
-question: "how're you"
-answer: "$$$im fine, you$$$"
-question: "tell me and advice"
-answer: "$$$invest in you$$$"
-USER REQUEST:
+you will return a text inside "$$$" answering.example:question:"tell me an advice" answer:"$$$invest in you$$$".user input:

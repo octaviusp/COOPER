@@ -1,0 +1,8 @@
+# Scripting execution
+
+In this section, "executeScript.py" contain all code logic to implement the majority of functionalities.
+executeScript.py provide a set of rules that given instructions via GPT, the O.S of the user will execute it.
+COOPER will create a temporary file with a hash name that contains python code to run, finally it will delete it.
+Also, will do the same with notes files, this are notes that given it, COOPER will read via gTTs(google text to speech) to generate assistant voice.
+
+"voiceAnswer.py" contains logic to call gTTs library and return a voice within text.

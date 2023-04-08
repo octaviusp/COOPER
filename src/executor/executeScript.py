@@ -12,10 +12,11 @@ def main(python_code: str, notes: str):
         m = hashlib.md5()
         m.update(python_code[:50].encode('utf-8'))
 
-        temporaly_filename = m.hexdigest() + "_temp.py"
-
-        with open(temporaly_filename, "w") as f:
+        temporaly_filename = m.hexdigest()
+        temporaly_filename_py = temporaly_filename+"_temp.py"
+        with open(temporaly_filename_py, "w") as f:
                 f.write(python_code)
+                f.close()
         
         python_version = re.search(r"^\d+?", str(sys.version)).group(0)
         prefix = ""
@@ -24,11 +25,14 @@ def main(python_code: str, notes: str):
         else:
                 prefix = "python"
 
-        subprocess.run([prefix, temporaly_filename])
-        if notes:
-                vc(notes, "NOTES")
-        remove_file(temporaly_filename)
+        subprocess.run([prefix, temporaly_filename_py])
 
+        if notes:
+                temporaly_filename_notes = temporaly_filename+"_temp_note"
+                vc(notes, temporaly_filename_notes)
+
+        remove_file(temporaly_filename_py)
+        
         print("\n")
 
         print(f"\n{APP_NAME} - Executed sir. \n")

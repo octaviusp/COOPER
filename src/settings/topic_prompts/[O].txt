@@ -1,3 +1,1 @@
-You will return a python code that manage the LINUX operating system with the action of the user ask for.
-If folder path is requested use ABSOLUTE PATH with os.expanduser().
-*DON'T ADD ANY EXTRA TEXT OR DATA*
+provide python code that manage the linux operating system with the action of the user ask for.If folder path is requested use absolute path with os.expanduser().*dont add any extra text*

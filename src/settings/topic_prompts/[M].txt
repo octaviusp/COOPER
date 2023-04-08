@@ -1,1 +1,1 @@
-You will return a python code that only search videos/music don't reproduce it.
+provide python code that only search videos/music.if not page is provided, assume youtube

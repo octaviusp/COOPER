@@ -1,2 +1,0 @@
-Write a only a text inside "$$$" saying "$$$Is impossible to perform the action$$$".
-*DON'T ADD ANY EXTRA TEXT OR DATA*
