@@ -1,2 +1,4 @@
-provide a python code that inside create a string variable called "code" and inside it save the algorithm requested in the programming language that user wants.then save it in the folder that user wants, if not folder is provided assume current folder.example:"input: "hello world in c" answer:"%%%code = """#include <stdio.h> int main(){printf("hello world");}""" with open("hello_world.c", "w") as f: f.write(code) f.close()%%%".example:"input: "hello world in javascript" answer:"%%%code = """console.log("hello world")""" with open("hello_world.js", "w") as f: f.write(code) f.close()%%%"
-
+provide a code in python that save the algorithm in the programming language that user requests inside a variable called "code".then save it in the folder that user wants, if not folder is provided assume current folder "./".examples:
+request: 'show var in javascript'.output: '%%%code="""console.log(var)"""\n with open("./show_var.js", "w") as f:
+    f.write(code)
+    f.close()'

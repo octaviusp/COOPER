@@ -1,3 +1,4 @@
+import os
 import openai
 from executor import executeScript, voiceAnswer
 
@@ -56,7 +57,7 @@ def promptTopicToGPT(user_action, config):
     
 def getPrompts(file_path):
         print(file_path)
-        with open(f"./settings/{file_path}.txt", "r") as Topic:
+        with open(os.path.abspath(f"./settings/{file_path}.txt"), "r") as Topic:
             getText = Topic.readlines()
             Topic.close()
             return " ".join(getText)

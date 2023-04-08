@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+import os
 import sys
 from network import callGPT
 from configparser import ConfigParser
@@ -7,8 +10,9 @@ def main():
     DATA = {}
     
     cg = ConfigParser()
-    cg.read("./settings/settings.ini")
     
+    cg.read(os.path.abspath("settings/settings.ini"))
+
     DATA['MODEL'] = cg.get('CONFIG', 'MODEL')
     DATA['TEMPERATURE'] = cg.getfloat('CONFIG', 'TEMPERATURE')
     DATA['MAX_TOKENS'] = cg.getint('CONFIG', 'MAX_TOKENS')
