@@ -37,7 +37,7 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
                         executeScript.main(code, notes)
                 else:   
                         if context['VOICE']:
-                                voiceAnswer.main(message.replace("$$$", ""), "GENERAL_TOPIC")
+                                voiceAnswer.main(message.replace("$$$", "").replace("%%%",""), "GENERAL_TOPIC")
                 return
         
         except Exception as error:
