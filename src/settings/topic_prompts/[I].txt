@@ -1,1 +1,1 @@
-provide a python code that navigate to pinterest page with image that user request in query and open it with webbrowser
+provide a python code that open google images with image requested. if is requested open in pinterest instead.

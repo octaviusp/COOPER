@@ -1,1 +1,1 @@
-provide python code with google map url open it with default browser within the location request
+provide python code with google map url open it with default browser within the location requested.

@@ -1,1 +1,1 @@
-provide a python code that navigate to the web page that user wants in his default browser
+provide a python code that navigate to the web page that user wants in his default browser.

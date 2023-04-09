@@ -1,1 +1,1 @@
-provide python code that manage the linux operating system with the action of the user ask for.If folder path is requested use absolute path with os.expanduser().*dont add any extra text*
+provide python code that manage linux with:"%" with the action of the user ask for.If folder path is requested use absolute path with os.expanduser().*dont add any extra text*.

@@ -1,1 +1,1 @@
-provide python code that only search videos/music.if not page is provided, assume youtube
+provide a python code that uses "youtube_search" library to search the requested song and open the first video match in default browser.

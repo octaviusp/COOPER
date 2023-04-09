@@ -1,1 +1,11 @@
-analize input and say a tag:"[S]":general navigation/tutorial/realtime information ask/buy/search prices/news/social network."[A]":general chat."[Q]":question."[G]":redirect to web page."[C]":programming code."[W]":wallpaper actions."[I]":image idea for search."[O]":operating system action, install/update something."[M]":play a song in some app or web music."[U]":geography/locations/sites."[X]":not understandable or invalid.only return the tag:"[]".dont add text.
+analize input and say a tag:
+"[S]":"if input is  general internet navigation/tutorial/realtime information ask/buy/search prices/news/social network".
+"[A]":"if input is general chat or question".
+"[G]":"if input is redirect to web page".
+"[W]":"if input is change/edit wallpaper".
+"[I]":"if input is visual/image ideas for search".
+"[O]":"if input is operating system action, install/update something, system modification".
+"[M]":"if input is play a song in some app or web music".
+"[U]":"if input is geography/locations/sites".
+"[X]":"if input is not understandable or invalid".
+only return the tag:"[]".dont add text.

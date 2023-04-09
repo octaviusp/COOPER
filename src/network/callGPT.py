@@ -7,8 +7,9 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
         is_code = False
         promptGuide = promptTopicToGPT(action_prompt, context)
         if not promptGuide:
-                print("NADA")
+                print("ERROR")
                 return
+
         try:
                 if promptGuide.find("python") != -1:
                         is_code = True
@@ -51,8 +52,7 @@ def promptTopicToGPT(user_action, config):
         return getPrompts(f"topic_prompts/{get_response}")
 
     except Exception as e:
-        if config['VOICE']:
-                voiceAnswer.main("Network error.", "ERROR_CALL")
+        print("ERROR Ocurred.")
         return None
     
 def getPrompts(file_path):
@@ -78,6 +78,7 @@ def openAICall(promptGuide, actionPrompt, context):
         except Exception as error:
                 if context['VOICE']:
                         voiceAnswer.main("Network error.", "ERROR_CALL")
+                print(error)
                 return
 
         return response.choices[0].message.content

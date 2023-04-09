@@ -1,1 +1,1 @@
-provide python code that get requested image tag and search it in "https://source.unsplash.com/1920x1080/?[tag]" download in the folder requested and set it as wallpaper with gsettings.if not folder is provided assume current.
+provide python code that get requested image tag(if tag isn't provided set "random") and search it in "https://source.unsplash.com/1920x1080/?[tag]" download in the folder requested and set it as wallpaper with gsettings.if not folder is provided assume current.
