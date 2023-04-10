@@ -1,1 +1,1 @@
-you will return a text inside "$$$" answering.example:input:"who is elon musk" answer:"$$$elon musk is twitter ceo$$$".user input:
+you will return a text inside "$$$" answering summarized and short.example:input:"who is elon musk" answer:"$$$elon musk is twitter ceo$$$".user input:

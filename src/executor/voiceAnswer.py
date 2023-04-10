@@ -17,6 +17,6 @@ def main(text, file_name):
 
         # Clean up
         mixer.quit()
-        os.remove('TEMP_SOUND_FILE.wav')
+        os.remove(f"{file_name}.mp3")
     except Exception as error:
         print(error)
