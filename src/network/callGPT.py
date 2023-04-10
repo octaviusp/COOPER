@@ -8,6 +8,7 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
         external_code = False
 
         promptGuide = promptTopicToGPT(action_prompt, context)
+        promptGuide[1] = promptGuide[1].replace("Tag: ", "")
         if not promptGuide[1]:
                 return
         elif promptGuide[1] == "[C]":
@@ -48,7 +49,10 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
                                 
                 else:   
                         if context['VOICE'] and not external_code:
-                                voiceAnswer.main(message.replace("$$$", "").replace("%%%",""), "GENERAL_TOPIC")
+                                message_voice = message.replace("$$$", "")
+                                message_voice = message_voice.replace("%%%", "")
+                                print(message_voice)
+                                voiceAnswer.main(message_voice, "GENERAL_TOPIC")
                 return
         
         except Exception as error:
@@ -58,6 +62,7 @@ def promptTopicToGPT(user_action, config):
 
     try:
         topic = openAICall(getPrompts("topic_selector"), user_action, config)
+        topic = topic.replace("Tag: ", "")
         topic_prompt = getPrompts(f"topic_prompts/{topic}")
         return [topic_prompt, topic]
 
@@ -66,11 +71,15 @@ def promptTopicToGPT(user_action, config):
         return [None, None]
     
 def getPrompts(file_path):
-        print(file_path)
-        with open(os.path.abspath(f"./settings/{file_path}.txt"), "r") as Topic:
-            getText = Topic.readlines()
-            Topic.close()
-            return " ".join(getText)
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        settings_file_path = os.path.join(dir_path, '../settings', f"{file_path}.txt")
+        try:
+                with open(settings_file_path, "r") as Topic:
+                    getText = Topic.readlines()
+                    Topic.close()
+                    return " ".join(getText)
+        except Exception as e:
+                print(e)
 
 def saveCode(code: str, title: str):
     with open(f"./{title}", "w") as f:

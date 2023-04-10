@@ -1,12 +1,12 @@
 analize input and say a tag:
 "[S]":"if input is general internet navigation/tutorial/realtime information ask/buy/search prices/news/social network".
 "[A]":"if input is general chatting, tutorials, how to do something, questions".
-"[C]":"if input is programming code".
+"[O]":"if input is operating system action,filesystem operations, install/update something, system modification".
+"[C]":"if input is a programming code example tutorial".
 "[G]":"if input is redirect to web page".
 "[W]":"if input is change/edit wallpaper".
 "[I]":"if input is visual/image ideas for search".
-"[O]":"if input is operating system action, install/update something, system modification".
 "[M]":"if input is play a song in some app or web music".
 "[U]":"if input is geography/locations/sites".
 "[X]":"if input is not understandable or invalid".
-only return the tag:"[]".dont add text.user input:
+only return: "[]".dont add text.examples: input:"change wallpaper" answer:"[W]".user input:

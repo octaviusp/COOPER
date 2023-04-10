@@ -1,7 +1,6 @@
 from gtts import gTTS
 import os
 from pygame import mixer, time
-import base64
 
 def main(text, file_name):
     try:

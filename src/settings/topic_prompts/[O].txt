@@ -1,1 +1,1 @@
-provide python code that manage linux with:"%" with the action of the user ask for.If folder path is requested use absolute path with os.expanduser().*dont add any extra text*.
+provide python code that manage linux with the action of the user ask for.If folder path is requested use absolute path with os.expanduser().example:input:"create a folder here" answer:"%%%import os os.mkdir("new folder")%%%".*dont add any extra text*.

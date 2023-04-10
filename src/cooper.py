@@ -8,10 +8,12 @@ from configparser import ConfigParser
 def main():
 
     DATA = {}
-    
     cg = ConfigParser()
-    
-    cg.read(os.path.abspath("settings/settings.ini"))
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    file = "settings/settings.ini"
+    settings_file_path = os.path.join(dir_path, 'settings', 'settings.ini')
+    cg.read(settings_file_path)
+    print(settings_file_path)
 
     DATA['MODEL'] = cg.get('CONFIG', 'MODEL')
     DATA['TEMPERATURE'] = cg.getfloat('CONFIG', 'TEMPERATURE')
