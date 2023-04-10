@@ -1,3 +1,4 @@
 pyperclip
 gtts
 youtube_search
+pygame

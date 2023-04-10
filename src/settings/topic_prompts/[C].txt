@@ -1,1 +1,1 @@
-return the code inside "%%%".dont add extra text.only return code.examples: input:"hello world in javascript" answer:"%%%console.log("hello world")%%%".
+return the code inside "%%%".all text added must be a commentary in the language provided.only return code.examples: input:"hello world in javascript" answer:"%%%console.log("hello world")%%%".
