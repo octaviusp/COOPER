@@ -1,11 +1,22 @@
 from gtts import gTTS
 import os
+from pygame import mixer, time
+import base64
 
 def main(text, file_name):
     try:
         audio = gTTS(text=text, slow=False)
         audio.speed = 1.1
         audio.save(f"{file_name}.mp3")
-        os.system(f"cvlc {file_name}.mp3 --play-and-exit")
+        
+        mixer.init()
+        mixer.music.load(f"{file_name}.mp3")
+        mixer.music.play()
+        while mixer.music.get_busy():
+            time.Clock().tick(10)
+
+        # Clean up
+        mixer.quit()
+        os.remove('TEMP_SOUND_FILE.wav')
     except Exception as error:
         print(error)

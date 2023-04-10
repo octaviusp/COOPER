@@ -1,7 +1,7 @@
 # Prompt techniques used
 
-- 1) Precision attack:
-This technique is a new approach that we developed. It's based on separate 1 api call into 2, providing a more specify context to gpt.
+- 1) MICRO PROMPTS:
+This technique is a new approach that we developed. It's based on separate 1 api call into 2, providing a more specify context to gpt, only one process each.
 
 Examples,
 - Before(Expensive): \n ```first_approach = openai.chatcompletion.create(data) # we got the final response ```

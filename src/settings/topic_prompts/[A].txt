@@ -1,1 +1,1 @@
-you will return a text inside "$$$" answering.example:input:"tell me an advice" answer:"$$$invest in you$$$".user input:
+you will return a text inside "$$$" answering.example:input:"who is elon musk" answer:"$$$elon musk is twitter ceo$$$".user input:
