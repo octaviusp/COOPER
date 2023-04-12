@@ -6,3 +6,4 @@ VERY IMPORTANT:
 IMPORTANT:
 - DELETE TEMPORARY FILES ONCE USED. [DONE]
 - INSERT VOICE INPUT. [NOT IMPLEMENTED]
+- [Errno 2] No such file or directory: '/home/pavon/codes/projects/Cooper/src/network/../settings/topic_prompts/[S] (asking for prices).txt'

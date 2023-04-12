@@ -1,5 +1,8 @@
 from gtts import gTTS
 import os
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
+
 from pygame import mixer, time
 
 def main(text, file_name):

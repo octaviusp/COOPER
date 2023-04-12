@@ -1,6 +1,18 @@
 import os
 import openai
 from executor import executeScript, voiceAnswer
+from helpers import validations
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def promptDataToGPT(action_prompt: str, context: dict[str, str]):
 
@@ -9,9 +21,13 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
 
         promptGuide = promptTopicToGPT(action_prompt, context)
         promptGuide[1] = promptGuide[1].replace("Tag: ", "")
-        if not promptGuide[1]:
+
+        if not validations.validTopic(promptGuide[1]):
                 return
-        elif promptGuide[1] == "[C]":
+
+        promptGuide[1] = promptGuide[1][:3]
+
+        if promptGuide[1] == "[C]":
                 is_code = True
                 external_code = True
         else:
@@ -29,7 +45,15 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
 
         try:
                 message = openAICall(promptGuide[0], action_prompt, context)
-                print(message)
+                print(bcolors.OKCYAN + "[COOPER]", "- Received")
+                if promptGuide[1] == "[C]":
+                        code = message.split("%%%")[1]
+                        file_metadata_prompt = getPrompts("code_prompt/file_metadata")
+                        metadata = openAICall(file_metadata_prompt, code, context)
+                        name = metadata.split("%%%")[1]
+                        saveCode(code, name)
+                        return
+
                 global notes
                 global name_file
                 try:
@@ -39,19 +63,12 @@ def promptDataToGPT(action_prompt: str, context: dict[str, str]):
                 if is_code:
                         parts = message.split("%%%")
                         code = parts[1]
-                        if not external_code:
-                                executeScript.main(parts[1], notes)
-                        else:
-                                file_metadata_prompt = getPrompts("code_prompt/file_metadata")
-                                metadata = openAICall(file_metadata_prompt, code, context)
-                                metadata_name = metadata.split("%%%")
-                                saveCode(code, metadata_name[1])
+                        executeScript.main(parts[1], notes)
                                 
                 else:   
                         if context['VOICE'] and not external_code:
                                 message_voice = message.replace("$$$", "")
                                 message_voice = message_voice.replace("%%%", "")
-                                print(message_voice)
                                 voiceAnswer.main(message_voice, "GENERAL_TOPIC")
                 return
         
@@ -84,7 +101,7 @@ def getPrompts(file_path):
 def saveCode(code: str, title: str):
     with open(f"./{title}", "w") as f:
         f.write(code)
-        print("\n COOPER - Code saved")
+        print(bcolors.OKCYAN + "\n [COOPER]", "- Code saved")
         f.close()
 
 def openAICall(promptGuide, actionPrompt, context):

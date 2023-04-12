@@ -13,7 +13,6 @@ def main():
     file = "settings/settings.ini"
     settings_file_path = os.path.join(dir_path, 'settings', 'settings.ini')
     cg.read(settings_file_path)
-    print(settings_file_path)
 
     DATA['MODEL'] = cg.get('CONFIG', 'MODEL')
     DATA['TEMPERATURE'] = cg.getfloat('CONFIG', 'TEMPERATURE')

@@ -5,10 +5,20 @@ import hashlib
 import platform
 from .voiceAnswer import main as vc
 
-APP_NAME = "COOPER - "
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def main(python_code: str, notes: str):
     try:
-        print("{APP_NAME} - Executing action sir...")
+        print(bcolors.OKBLUE+"[COOPER]", "- Executing action sir...")
         m = hashlib.md5()
         m.update(python_code[:50].encode('utf-8'))
 
@@ -35,11 +45,11 @@ def main(python_code: str, notes: str):
         
         print("\n")
 
-        print(f"\n{APP_NAME} - Executed sir. \n")
+        print(bcolors.OKCYAN +"[COOPER]", "- Executed.")
         return
 
     except Exception as error:
-        print(error)
+        print(bcolors.WARNING +"[COOPER]", " Execution error.")
         return
 
 def remove_file(file: str):
